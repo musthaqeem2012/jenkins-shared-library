@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library('jenkins-shared-library@master') _
+@Library('jenkins-shared-library@master') _ //master or wherever branch
 pipeline {
     agent any
     stages {
