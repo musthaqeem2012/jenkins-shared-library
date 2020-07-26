@@ -11,7 +11,7 @@ def GetDBDetails(){
 //def jenkinsHome = Jenkins.instance.getRootDir().absolutePath
 def props = new Properties()
 def rootDir = pwd()
-def propertiesFile = new File("${rootDir}/dbprop.properties")
+def propertiesFile = new File("${rootDir}/resources/dbprop.properties")
 String sEnvType="QA"
 String sDBURL
 String sDBUname
@@ -65,6 +65,7 @@ def dbDriver   = "org.postgresql.Driver"
 	Statement stmt = null;
 	
 	
+	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
 	conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
           println("Connected to the PostgreSQL server successfully.");	
 	stmt = conn.createStatement();
