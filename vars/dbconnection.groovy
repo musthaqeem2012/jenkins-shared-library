@@ -61,7 +61,7 @@ def dbDriver   = "org.postgresql.Driver"
         }
 	
       // Creating a connection to the database
-       
+       Connection conn=null
 	Statement stmt = null;
 	
 	
