@@ -47,7 +47,7 @@ def dbPassword = ""
 def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 //Class.forName("org.postgresql.Driver");
 
-	  try {
+	/*  try {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
@@ -58,7 +58,7 @@ def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
             println(e.printStackTrace());
             return;
 
-        }
+        }*/
 	
       // Creating a connection to the database
        Connection conn=null
