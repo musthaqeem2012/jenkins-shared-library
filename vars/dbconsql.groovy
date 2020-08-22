@@ -42,7 +42,7 @@ if (propertiesFile.exists()) {
 	println(sDBUname)
 	
 	//def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test;integratedSecurity=true"
-	def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test"
+	def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
 def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
