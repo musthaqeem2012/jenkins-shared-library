@@ -46,7 +46,7 @@ if (propertiesFile.exists()) {
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
 def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-//Class.forName("org.postgresql.Driver");
+Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
 	/*  try {
 
