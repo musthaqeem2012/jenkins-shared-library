@@ -1,5 +1,5 @@
 import java.io.File.*
-	import java.sql.SQLException;
+import java.sql.SQLException;
 import java.sql.*
 import groovy.sql.Sql
 
@@ -41,19 +41,19 @@ if (propertiesFile.exists()) {
 	println(sDBURL)
 	println(sDBUname)
 	
-	def dbUrl      = "jdbc:postgresql://localhost:5432/test"
-def dbUser     = "postgres"
-def dbPassword = "admin123"
-def dbDriver   = "org.postgresql.Driver"
+	def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test;integratedSecurity=true"
+def dbUser     = "DESKTOP-PLD86VN\DELL"
+def dbPassword = ""
+def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 //Class.forName("org.postgresql.Driver");
 
 	  try {
 
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
         } catch (ClassNotFoundException e) {
 
-            println("Where is your PostgreSQL JDBC Driver? "
+            println("Where is your SQLServer JDBC Driver? "
                     + "Include in your library path!");
             println(e.printStackTrace());
             return;
@@ -67,12 +67,12 @@ def dbDriver   = "org.postgresql.Driver"
 	
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
 	conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-          println("Connected to the PostgreSQL server successfully.");	
+          println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
 	try
 	{
 		
-      ResultSet rs = stmt.executeQuery( "select country from dept" )
+      ResultSet rs = stmt.executeQuery( "select * from dbo.Department" )
 		println("query executed")
 		
 	while ( rs.next() ) {
