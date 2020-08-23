@@ -70,14 +70,14 @@ def driver = null;
 	
       // Creating a connection to the database
       
-try
-	{
+
 //database connection credentials
 driver=Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newInstance() as Driver
 dbprops.setProperty("database", "Test")
 dbprops.setProperty("user", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
-	
+	try
+	{
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
 	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 	conn=driver.connect("jdbc:sqlserver://localhost:1433", props);
