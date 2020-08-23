@@ -42,7 +42,7 @@ if (propertiesFile.exists()) {
 	println(sDBURL)
 	println(sDBUname)
 	
-	def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test;integratedSecurity=true"
+	def dbUrl      = "jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433;databasename=Test"//;integratedSecurity=true"
 	//def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
@@ -72,18 +72,18 @@ def driver = null;
       
 
 //database connection credentials
-driver=Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance() as Driver
+/*driver=Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance() as Driver
 dbprops.setProperty("database", "Test")
 dbprops.setProperty("username", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
-dbprops.setProperty("integratedSecurity","true")
+dbprops.setProperty("integratedSecurity","true")*/
 	try
 	{
-	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
-	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+	//conn = DriverManager.getConnection(sDBURL, sDBUname, dbPassword);
+	conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 		
-	conn=driver.connect("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433", dbprops);
-	def sql = new Sql(conn);
+	//conn=driver.connect("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433", dbprops);
+	//def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
 	
