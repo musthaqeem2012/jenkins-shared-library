@@ -76,7 +76,7 @@ driver=Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance
 dbprops.setProperty("database", "Test")
 dbprops.setProperty("username", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
-dbprops.setProperty("integratedSecurity","true")
+//dbprops.setProperty("integratedSecurity","true")
 	try
 	{
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, dbPassword);
