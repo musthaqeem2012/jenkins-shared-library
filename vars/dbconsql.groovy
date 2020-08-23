@@ -59,7 +59,7 @@ def driver = null;
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
 
             println("Where is your SQLServer JDBC Driver? "
                     + "Include in your library path!");
