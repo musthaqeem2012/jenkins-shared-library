@@ -46,6 +46,10 @@ if (propertiesFile.exists()) {
 	//def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
+	 Connection conn=null
+	Statement stmt = null;
+	
+	def dbprops = new Properties()
 //def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 	try
@@ -65,10 +69,7 @@ def driver = Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newIn
         }*/
 	
       // Creating a connection to the database
-       Connection conn=null
-	Statement stmt = null;
-	
-	def dbprops = new Properties()
+      
 
 //database connection credentials
 
@@ -95,7 +96,7 @@ dbprops.setProperty("password", "")
 	}
 	catch(Exception e)
 	{
-		println("Exception")
+		println(e.getMessage())
 	}
 
      
