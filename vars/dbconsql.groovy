@@ -77,12 +77,13 @@ dbprops.setProperty("database", "Test")
 dbprops.setProperty("username", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
 //dbprops.setProperty("integratedSecurity","true")
+	
 	try
 	{
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, dbPassword);
 	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 		Connection conn = DriverManager
-                .getConnection("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433;databaseName=Test","DESKTOP-PLD86VN\\DELL","");
+                .getConnection("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433;databaseName=Test;Trusted_Connection=False;username=DESKTOP-PLD86VN\\DELL;password=;");
 	//conn=driver.connect("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433", dbprops);
 	def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
