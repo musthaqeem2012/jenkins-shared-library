@@ -2,6 +2,7 @@ import java.io.File.*
 import java.sql.SQLException;
 import java.sql.*
 import groovy.sql.Sql
+import java.sql.Driver
 
 import jenkins.model.Jenkins
 
@@ -41,13 +42,13 @@ if (propertiesFile.exists()) {
 	println(sDBURL)
 	println(sDBUname)
 	
-	//def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test;integratedSecurity=true"
-	def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
+	def dbUrl      = "jdbc:sqlserver://localhost:1433;databasename=Test;integratedSecurity=true"
+	//def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
 def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-
+def driver = Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance() as Driver
 	/*  try {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -65,9 +66,18 @@ Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
        Connection conn=null
 	Statement stmt = null;
 	
+	def dbprops = new Properties()
+
+//database connection credentials
+
+dbprops.setProperty("database", "Test")
+dbprops.setProperty("user", "DESKTOP-PLD86VN\\DELL")
+dbprops.setProperty("password", "")
 	
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
-	conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+	conn=driver.connect("jdbc:sqlserver://localhost:1433", props);
+	def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
 	try
