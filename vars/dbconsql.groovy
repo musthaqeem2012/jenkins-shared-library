@@ -101,7 +101,9 @@ dbprops.setProperty("password", "")
 	}
 	catch(Exception e)
 	{
-		println(e.getMessage())
+		println("inside exception")
+		println(e.printStackTrace());
+		return
 	}
 
      
