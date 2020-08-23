@@ -52,10 +52,10 @@ def dbPassword = ""
 	def dbprops = new Properties()
 //def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-	try
-	{
-def driver = Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newInstance() as Driver
-	/*  try {
+	
+def driver = null;
+	
+	  try {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
@@ -66,13 +66,14 @@ def driver = Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newIn
             println(e.printStackTrace());
             return;
 
-        }*/
+        }
 	
       // Creating a connection to the database
       
-
+try
+	{
 //database connection credentials
-
+driver=Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newInstance() as Driver
 dbprops.setProperty("database", "Test")
 dbprops.setProperty("user", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
