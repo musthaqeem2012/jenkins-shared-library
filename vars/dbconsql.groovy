@@ -46,9 +46,9 @@ if (propertiesFile.exists()) {
 	//def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
-def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-def driver = Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance() as Driver
+//def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+//Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+def driver = Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newInstance() as Driver
 	/*  try {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
