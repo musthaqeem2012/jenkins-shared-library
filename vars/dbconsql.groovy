@@ -103,6 +103,7 @@ dbprops.setProperty("password", "")
 	{
 		println("inside exception")
 		println(e.printStackTrace());
+		println("Exception: ${e}")
 		return
 	}
 
