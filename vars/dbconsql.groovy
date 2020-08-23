@@ -46,7 +46,7 @@ if (propertiesFile.exists()) {
 	//def dbUrl      = "jdbc:sqlserver://localhost:1433;DatabaseName=Test"
 def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
-	 Connection conn=null
+	// Connection conn=null
 	Statement stmt = null;
 	
 	def dbprops = new Properties()
@@ -81,8 +81,9 @@ dbprops.setProperty("password", "")
 	{
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, dbPassword);
 	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-		
-	conn=driver.connect("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433", dbprops);
+		Connection conn = DriverManager
+                .getConnection("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433;databaseName=Test","DESKTOP-PLD86VN\\DELL","");
+	//conn=driver.connect("jdbc:sqlserver://DESKTOP-PLD86VN\\SQLEXPRESS:1433", dbprops);
 	def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
