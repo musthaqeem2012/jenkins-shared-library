@@ -55,7 +55,7 @@ def dbPassword = ""
 	
 def driver = null;
 	
-	  try {
+	/*  try {
 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
@@ -66,7 +66,7 @@ def driver = null;
             println(e.printStackTrace());
             return;
 
-        }
+        }*/
 	
       // Creating a connection to the database
       
