@@ -74,7 +74,7 @@ def driver = null;
 //database connection credentials
 driver=Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance() as Driver
 dbprops.setProperty("database", "Test")
-dbprops.setProperty("user", "DESKTOP-PLD86VN\\DELL")
+dbprops.setProperty("username", "DESKTOP-PLD86VN\\DELL")
 dbprops.setProperty("password", "")
 	try
 	{
