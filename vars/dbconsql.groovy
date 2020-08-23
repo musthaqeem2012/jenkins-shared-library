@@ -3,7 +3,7 @@ import java.sql.SQLException;
 import java.sql.*
 import groovy.sql.Sql
 import java.sql.Driver
-
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 import jenkins.model.Jenkins
 
 
