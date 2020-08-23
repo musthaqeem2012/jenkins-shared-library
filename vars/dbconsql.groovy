@@ -48,6 +48,8 @@ def dbUser     = "DESKTOP-PLD86VN\\DELL"
 def dbPassword = ""
 //def dbDriver   = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	try
+	{
 def driver = Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver").newInstance() as Driver
 	/*  try {
 
@@ -80,8 +82,7 @@ dbprops.setProperty("password", "")
 	def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
-	try
-	{
+	
 		
       ResultSet rs = stmt.executeQuery( "select * from dbo.Department" )
 		println("query executed")
