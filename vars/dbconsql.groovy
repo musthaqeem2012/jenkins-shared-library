@@ -80,7 +80,7 @@ dbprops.setProperty("password", "")
 	{
 	//conn = DriverManager.getConnection(sDBURL, sDBUname, sDBPwd);
 	//conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-	conn=driver.connect("jdbc:sqlserver://localhost:1433", props);
+	conn=driver.connect("jdbc:sqlserver://localhost:1433", dbprops);
 	def sql = new Sql(conn);
           println("Connected to the SQLServer successfully.");	
 	stmt = conn.createStatement();
