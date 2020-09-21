@@ -6,6 +6,7 @@ pipeline {
     
     parameters {
   extendedChoice bindings: '', description: '', groovyClasspath: '', groovyScript: '''import groovy.json.*
+import groovy.json.JsonSlurper;
 
 String getItemData(String item) {
     def jsonSlurper = new JsonSlurper()
