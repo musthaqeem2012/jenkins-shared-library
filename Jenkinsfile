@@ -8,16 +8,16 @@ pipeline {
   extendedChoice bindings: '', description: '', groovyClasspath: '', groovyScript: '''import groovy.json.*
 import groovy.json.JsonSlurper;
 
-String getItemData(String item) {
+
     def jsonSlurper = new JsonSlurper()
 
 //def data= readJSON file: \'myjson.json\'
    // def data = jsonSlurper.parseText(new File("myjson.json").text)
     return "AAA"
      //data.TESTS.each{ return it["$item"] }  
-}
 
-getItemData("MEMBER_ADDRESS")
+
+
 ''', multiSelectDelimiter: ',', name: 'mychoice', quoteValue: false, saveJSONParameterToFile: false, type: 'PT_JSON', visibleItemCount: 5
 }
 
