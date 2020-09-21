@@ -12,7 +12,8 @@ String getItemData(String item) {
 
 //def data= readJSON file: \'myjson.json\'
     def data = jsonSlurper.parseText(new File("myjson.json").text)
-     data.TESTS.each{ return it["$item"] }  
+    return data
+     //data.TESTS.each{ return it["$item"] }  
 }
 
 getItemData("MEMBER_ADDRESS")
